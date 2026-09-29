@@ -1,0 +1,70 @@
+# Local AI Assistant - .gitignore
+# =============================================================================
+
+# Environnement virtuel Python
+venv/
+.env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ollama
+ollama/
+.models/
+
+# ChromaDB
+chroma_db/
+
+# Audio temporaire
+audio/temp_*.wav
+audio/temp_output.wav
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.pip/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration locaux
+.env.local
+config/local.yaml
+
+# Données utilisateur
+data/
+
+# Modeles et donnees generes localement
+models/
+outputs/
+sounds/custom/
+*.log
+preflight_report.txt

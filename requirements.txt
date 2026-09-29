@@ -1,0 +1,63 @@
+# =============================================================================
+# IA Locale - Dependances Python
+# =============================================================================
+# Installation complete :  pip install -r requirements.txt
+# Installation minimale :  pip install -r requirements-core.txt  (voir INSTALL.ps1)
+#
+# NOTE Windows : les roues CPU de PyTorch sont privilegiees (pas de GPU requis).
+# -----------------------------------------------------------------------------
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# --- Coeur : NECESSAIRE au demarrage -----------------------------------------
+gradio>=4.44.0,<6.0.0
+gradio_client>=1.3.0
+ollama>=0.4.0
+PyYAML>=6.0.1
+psutil>=5.9.0
+requests>=2.31.0
+python-multipart>=0.0.9
+numpy>=1.26.0,<3.0.0
+Pillow>=10.0.0
+
+# --- Point 2 / 29 : reconnaissance vocale et dictee --------------------------
+faster-whisper>=1.0.0
+sounddevice>=0.4.6
+soundfile>=0.12.1
+pydub>=0.25.1
+# webrtcvad-wheels = fork du webrtcvad avec roues precompilees (Windows/macOS/Linux).
+# Le paquet "webrtcvad" classique doit etre compile et echoue sous Python 3.11+.
+webrtcvad-wheels>=2.0.14
+# playsound : effets sonores (Windows : utilise winsound, aucun binaire externe)
+playsound>=1.2.2 ; sys_platform == "win32"
+
+# --- Point 9 : synthese vocale multi-voix (100% local, sans authentification) -
+# Coqui TTS : meilleure qualite multi-voix, mais installation lourde sous Windows.
+# En cas d'echec, utiliser piper-tts (leger, CPU, multi-voix) : voir INSTALL.ps1
+piper-tts>=1.2.0
+TTS>=0.22.0
+
+# --- Points 4 / 14 : sessions, RAG, plugins ----------------------------------
+chromadb>=0.4.24
+sentence-transformers>=2.7.0
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-text-splitters>=0.2.0
+pypdf>=4.2.0
+docx2txt>=0.8
+
+# --- Points 6 / 12 / 13 : generation d'images, multi-modeles, 3D -------------
+torch>=2.2.0
+torchvision>=0.17.0
+torchaudio>=2.2.0
+transformers>=4.41.0
+diffusers>=0.29.0
+accelerate>=0.30.0
+opencv-python>=4.9.0
+# Modélisation 3D + export impression (STL, 3MF, OBJ, PLY, GLB) :
+# mailles (visual hull + marching cubes) puis export des projets.
+scikit-image>=0.21.0
+trimesh>=4.0.0
+
+# --- Divers -----------------------------------------------------------------
+python-dotenv>=1.0.0

@@ -1,0 +1,21 @@
+# =============================================================================
+# IA Locale - Dependances MINIMALES (demarrage garanti)
+# =============================================================================
+# Installe l'interface web et le dialogue avec Ollama.
+# Les fonctionnalites avancees (voix, RAG, images, 3D) s'ajoutent ensuite
+# via INSTALL.ps1 ou depuis l'interface (bouton "Installation des IA").
+# -----------------------------------------------------------------------------
+
+gradio>=4.44.0,<6.0.0
+gradio_client>=1.3.0
+ollama>=0.4.0
+PyYAML>=6.0.1
+psutil>=5.9.0
+requests>=2.31.0
+python-multipart>=0.0.9
+numpy>=1.26.0,<3.0.0
+Pillow>=10.0.0
+# --- Modélisation 3D + export impression (léger, sans GPU) -----------------
+# Indispensable à l'onglet « Modélisation & Export » (STL, 3MF, OBJ, PLY, GLB).
+trimesh>=4.0.0
+scikit-image>=0.21.0
